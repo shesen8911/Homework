@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentList">
+    <fragment
+        android:id="@+id/fragmentList"
+        android:name="com.example.homework.FragmentList"
+        android:label="藍芽清單"
+        tools:layout="@layout/fragment_list">
+        <action
+            android:id="@+id/action_fragmentList_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.homework.DetailFragment"
+        android:label="詳細資訊"
+        tools:layout="@layout/fragment_detail">
+        <argument
+            android:name="Rssi"
+            app:argType="integer" />
+        <argument
+            android:name="Mac"
+            app:argType="string" />
+        <argument
+            android:name="Content"
+            app:argType="string" />
+    </fragment>
+</navigation>
